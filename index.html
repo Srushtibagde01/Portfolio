@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .projects-grid .project img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px; /* Adjust this value as needed */
+        }
+        .skills-list li img {
+            width: 50px; /* Adjust this value as needed */
+            height: 50px; /* Adjust this value as needed */
+        }
+        .skills-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Adjust this value as needed */
+        }
+        .skills-list li img {
+            margin-right: 10px; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SRUSHTI BAGDE</h1>
+            <p>MSC Mathematics Student | Aspiring Data Analyst</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <img src="IMAGE.jpg" alt="DEVELOPER" class="profile-img">
+            <p>I am currently pursuing my MSC in Mathematics, specializing in [your specialization or area of focus]. With a strong foundation in mathematical principles, I bring analytical thinking and problem-solving skills to the table. My academic journey has equipped me with proficiency in [mention specific skills or subjects relevant to your field], and I am passionate about applying these skills to real-world challenges.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>
+                    <img src="HTML.png" alt="HTML">
+                    HTML
+                </li>
+                <li>
+                    <img src="CSS-Logo.png" alt="CSS">
+                    CSS
+                </li>
+                <li>
+                    <img src="Java-Logo.png" alt="JAVA">
+                    JAVA SCRIPT
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <img src="Screenshot (61).png" alt="Create Landing Page">
+                    <h3>Landing Page Project:</h3>
+                    <p>Developed a responsive landing page with modern HTML and CSS, featuring an elegant design and intuitive user experience.</p>
+                </div>
+                <div class="project">
+                    <img src="CALU.png" alt="Create a Calculator">
+                    <h3>Calculator Project</h3>
+                    <p>Created a functional calculator using JavaScript, enabling basic arithmetic operations with a sleek and user-friendly interface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <a href="your-resume.pdf" download>Download Resume</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: srushtibagde01@gmail.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Srushti Bagde. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for nav links
+            document.querySelectorAll('nav ul li a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Dark mode toggle
+            const toggleButton = document.createElement('button');
+            toggleButton.textContent = 'Toggle Dark Mode';
+            toggleButton.style.position = 'fixed';
+            toggleButton.style.bottom = '1rem';
+            toggleButton.style.right = '1rem';
+            toggleButton.style.padding = '0.5rem 1rem';
+            toggleButton.style.backgroundColor = '#333';
+            toggleButton.style.color = '#fff';
+            toggleButton.style.border = 'none';
+            toggleButton.style.borderRadius = '5px';
+            toggleButton.style.cursor = 'pointer';
+
+            document.body.appendChild(toggleButton);
+
+            toggleButton.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+            });
+        });
+
+        // Add dark mode styles
+        const darkModeStyles = `
+            body.dark-mode {
+                background-color: #333;
+                color: #fff;
+            }
+            body.dark-mode nav, body.dark-mode footer {
+                background-color: #222;
+            }
+            body.dark-mode section#resume a {
+                background-color: #444;
+            }
+            body.dark-mode section#resume a:hover {
+                background-color: #666;
+            }
+        `;
+
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = darkModeStyles;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
